@@ -1,0 +1,85 @@
+<style scoped>
+  .regi {
+    margin: 0;
+    width: 100%;
+  }
+  form {
+    padding-left: 20%;
+  }
+  .form-control {
+    width: 80%;
+  }
+</style>
+
+  <div class="container" style="margin-top:5em;">
+    
+  <h1 class="text-center">Register</h1>
+  
+  <form method="post" action = "/home/insert" enctype="multipart/form-data">
+    
+    <div class="form-group">
+     <label for="example-text-input" class="col-2 col-form-label">배틀태그</label>
+      <div class="regi">
+        <input class="form-control" type="text" name="battletag" id="example-text-input">
+      </div>
+    </div>  
+  
+    <div class="form-group">
+      <label for="example-text-input" class="col-2 col-form-label">성별</label>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="man"> 남　
+          <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="woman">여
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="example-text-input" class=" col-2 col-form-label">연령대</label>
+      <div class="dropdown col-10">
+        <select name="age" class="form-control">
+          <option value ="teen">10대</option>
+          <option value ="twenty">20대</option>
+          <option value ="thirty">30대</option>
+          <option value ="forty">40대 이상</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="example-text-input" class="col-2 col-form-label">포지션</label>
+      <div class="dropdown col-10">
+        <select name ="position" class="form-control">
+          <option value ="dealer">dealer</option>
+          <option value ="healer">healer</option>
+          <option value ="tanker">tanker</option>
+          <option value ="defence">defence</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="example-text-input" class="col-2 col-form-label">티어</label>
+      <div class="dropdown col-10">
+        <select name="tier" class="form-control">
+          <option value='bronze'>bronze</option>
+          <option value='silver'>silver</option>
+          <option value='gold'>gold</option>
+          <option value='platinum'>platinum</option>
+          <option value='diamond'>diamond</option>
+          <option value='master'>master</option>
+          <option value='grand_master'>grand master</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="form-group">
+     <label for="example-text-input" class="col-2 col-form-label">한마디</label>
+      <div class="regi">
+        <textarea class="form-control" type="text" name="comment" id="example-text-input"></textarea>
+     </div>
+    </div>
+  
+  <button type="submit" class="btn btn-outline-secondary"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>　등록하기</button>
+  </form>
+</div>

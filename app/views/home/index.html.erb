@@ -1,0 +1,107 @@
+<style>
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+        border-top: 0;
+    }
+    
+</style>
+    
+    <!-- Page Content -->
+<div class="container2">
+   <div class="alert alert-info">
+           
+        <form method="get" action = "/home/index">
+            <table class="table">
+                <tr>
+                    <td><input type="checkbox" name="gender[]" value="man"/>남자</td>
+                    <td><input type="checkbox" name="gender[]" value="woman"/>여자</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="age[]" value="teen"/>10대</td>
+                    <td><input type="checkbox" name="age[]" value="twenty">20대</td>
+                    <td><input type="checkbox" name="age[]" value="thirty">30대</td>
+                    <td><input type="checkbox" name="age[]" value="forty">40대 이상</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="position[]" value="dealer">Dealer</td>
+                    <td><input type="checkbox" name="position[]" value="healer">Healer</td>
+                    <td><input type="checkbox" name="position[]" value="tanker">Tanker</td>
+                    <td><input type="checkbox" name="position[]" value="defence">Defence</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="tier[]" value="bronze">Bronze</td>
+                    <td><input type="checkbox" name="tier[]" value="silver">Silver</td>
+                    <td><input type="checkbox" name="tier[]" value="gold">Gold</td>
+                    <td><input type="checkbox" name="tier[]" value="platinum">Platinum</td>
+                    <td><input type="checkbox" name="tier[]" value="diamond">Diamond</td>
+                    <td><input type="checkbox" name="tier[]" value="master">Master</td>
+                    <td><input type="checkbox" name="tier[]" value="grand_master">Grand Master</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+        </form>
+    </div>
+    
+         
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">추천 친구 목록</h1>
+            </div>
+        </div>
+        <%= @gender_man %>
+        <%= @gender_woman %>
+        <%if @find_user%>
+            <% @find_user.each do |user| %>
+            <div class="row">
+                <div class="thumbnail">
+                    <div class="caption-full">
+                        <h4 class="pull-right">ㅡ <i><%= user.comment%></i>  </h4>
+                        <h4>배틀태그 - <%= user.battletag %></h4>
+                        <p>성  별: <%= user.gender%></p>
+                        <p>나  이: <%= user.age%></p>
+                        <p>티  어: <%= user.tier%></p>
+                        <p>포지션: <%=user.position%></p>
+                    </div>
+                </div>
+                
+                <!--<div class = "well">-->
+                <!--    <h3>배틀태그</h3>-->
+                <!--    <p><%= user.battletag %></p>-->
+                <!--    <h4>한마디</h4>-->
+                <!--    <p><%= user.comment%></p>-->
+                <!--    <p>성별 : <%= user.gender%></p>-->
+                <!--    <p>나이 : <%= user.age%> </p>-->
+                <!--    <p>티어 : <%= user.tier%></p>-->
+                <!--    <p>포지션 : <%=user.position%></p>-->
+                <!--</div>-->
+            </div>
+            <% end%>
+        <% end%>    
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2017 likelion</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!--Top 버튼-->
+    <rel="nofollow" title="Back to Top" style="font-size:2em"><button class="btn btn-default btn-lg" id="top_button"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>TOP</button></a>
+    <script>
+        $('#top_button').click(function() {
+           $('html, body').animate({ scrollTop: 0 }, 'fast'); 
+        });
+    </script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>z
